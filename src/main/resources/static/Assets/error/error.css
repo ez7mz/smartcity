@@ -1,0 +1,68 @@
+/*======================
+    error page
+=======================*/
+
+
+/* latin */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.page_404 img {
+    width: 100%;
+}
+
+.four_zero_four_bg {
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: fill;
+}
+
+.four_zero_four_bg h1 {
+    font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+    font-size: 80px;
+}
+
+.link_404 {
+    color: #fff!important;
+    padding: 10px 20px;
+    background: #7836c6;
+    margin: 20px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.link_404:hover{
+    background: #1befc5;
+    color: #000;
+}
+
+.contant_box_404 {
+    margin-top: -50px;
+}
+
+.contant_box_404 p{
+    text-transform: capitalize;
+    font-size: 22px;
+    color: darkred;
+}
