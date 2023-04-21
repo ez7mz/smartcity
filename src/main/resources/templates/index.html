@@ -9,5 +9,23 @@
 </head>
 <body>
 <h1>Welcome to out smart city</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>location</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="info : ${infos}">
+        <tr>
+            <td th:text="${info.id}"></td>
+            <td th:text="${info.name}"></td>
+            <td th:text="${info.location}"></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
 </body>
 </html>

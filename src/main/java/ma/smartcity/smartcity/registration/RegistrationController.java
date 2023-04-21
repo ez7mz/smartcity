@@ -17,7 +17,6 @@ public class RegistrationController {
                                  @RequestParam("email") String email,
                                  @RequestParam("password") String password){
         RegistrationRequest request = new RegistrationRequest(firstName, lastName, password, email);
-        System.out.println(request);
         return registrationService.register(request);
     }
 
