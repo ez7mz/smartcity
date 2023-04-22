@@ -28,7 +28,7 @@ public class RegistrationController {
     @GetMapping(path = "/")
     public ModelAndView signup(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("signup");
+        modelAndView.setViewName("registration/signup");
         return modelAndView;
     }
 

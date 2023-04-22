@@ -6,11 +6,11 @@ server:
 spring:
   datasource:
     password: "@Qwerty123"
-    url: jdbc:mysql://localhost:3306/registration
+    url: jdbc:mysql://localhost:3306/smartcity_project
     username: ez7mz
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect

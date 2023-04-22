@@ -15,4 +15,8 @@ public class CityInfosService {
         System.out.println(cityInfosRepository.findAll());
         return cityInfosRepository.findAll();
     }
+
+    public List<CityInfos> getCityInfoByCategory(String category){
+        return cityInfosRepository.findCityInfosByCategory(category);
+    }
 }

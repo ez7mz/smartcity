@@ -1,0 +1,31 @@
+<div class="menu trans_400">
+  <div class="menu_close_container">
+    <div class="menu_close">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="log_reg">
+    <div class="log_reg_content d-flex flex-row align-items-center justify-content-end">
+      <div class="login log_reg_text"><a href="#">[[${appUser.firstName}]] [[${appUser.lastName}]]</a></div>
+      <div class="dropdown">
+        <div class="profile-img" type="button" id="drop-down-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down float_right" style="color: #fff"></i></div>
+        <div class="dropdown-menu" aria-labelledby="drop-down-menu">
+          <a class="dropdown-item" href="/settings"><i class="fa fa-email"></i> [[${appUser.email}]]</a>
+          <a class="dropdown-item" href="/settings"><i class="fa fa-gears"></i>&emsp; Settings</a>
+          <a class="dropdown-item" href="/lock-screen"><i class="fa fa-lock"></i>&emsp; Lock Screen</a>
+          <a class="dropdown-item" href="/logout"><i class="fa fa-power-off"></i>&emsp; Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="menu_nav">
+    <ul>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#prices">Prices</a></li>
+      <li><a href="/#footer">Contact</a></li>
+      <li><a href="/about">About us</a></li>
+    </ul>
+  </nav>
+</div>

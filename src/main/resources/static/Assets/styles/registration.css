@@ -1,0 +1,259 @@
+/*============================
+ [Table of CSS]
+
+1. Bootstrap Classes
+2. Content
+3. Login
+4. Lock Screen
+5. Responsive
+
+========================================*/
+
+
+/*-----------------
+	1. Bootstrap Classes
+-----------------------*/
+
+.btn.focus,
+.btn:focus {
+    box-shadow: unset;
+}
+
+.btn-primary {
+    background-color: #4d1d85;
+    border: 1px solid #4d1d85;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.active,
+.btn-primary:active,
+.open>.dropdown-toggle.btn-primary {
+    background-color: #1befc5;
+    border: 1px solid #1befc5;
+}
+
+
+/*-----------------
+	10. Content
+-----------------------*/
+
+.main-wrapper {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+
+/*-----------------
+	11. Login
+-----------------------*/
+
+.login-body {
+    display: table;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.login-wrapper {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-wrapper .loginbox {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin: 1.875rem auto;
+    max-width: 800px;
+    min-height: 500px;
+    width: 100%;
+}
+
+.login-wrapper .loginbox .login-left {
+    align-items: center;
+    background: linear-gradient(45deg, rgba(50,20,86,1) 0%, rgba(70,27,121,1) 52%, rgba(120,54,198,1) 100%);
+    border-radius: 6px 0 0 6px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    width: 400px;
+    display: flex;
+}
+
+.login-wrapper .loginbox .login-right {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    width: 400px;
+}
+
+.login-wrapper .loginbox .login-right .login-right-wrap {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.login-wrapper .loginbox .login-right h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.account-subtitle {
+    color: #4c4c4c;
+    font-size: 17px;
+    margin-bottom: 1.875rem;
+    text-align: center;
+}
+
+.login-wrapper .loginbox .login-right .forgotpass a {
+    color: #a0a0a0;
+}
+
+.login-wrapper .loginbox .login-right .forgotpass a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.login-wrapper .loginbox .login-right .dont-have {
+    color: #a0a0a0;
+    margin-top: 1.875rem;
+}
+
+.login-wrapper .loginbox .login-right .dont-have a {
+    color: #333;
+}
+
+.login-wrapper .loginbox .login-right .dont-have a:hover {
+    text-decoration: underline;
+}
+
+.social-login {
+    text-align: center;
+}
+
+.social-login>span {
+    color: #a0a0a0;
+    margin-right: 8px;
+}
+
+.social-login>a {
+    background-color: #ccc;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 6px;
+    text-align: center;
+    width: 32px;
+}
+
+.social-login>a:last-child {
+    margin-right: 0;
+}
+
+.social-login>a.facebook {
+    background-color: #4b75bd;
+}
+
+.social-login>a.google {
+    background-color: #fe5240;
+}
+
+.login-or {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.or-line {
+    background-color: #e5e5e5;
+    height: 1px;
+    margin-bottom: 0;
+    margin-top: 0;
+    display: block;
+}
+
+.span-or {
+    background-color: #fff;
+    display: block;
+    left: 50%;
+    margin-left: -20px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 42px;
+}
+
+
+/*-----------------
+	12. Lock Screen
+-----------------------*/
+
+.lock-user {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.lock-user img {
+    margin-bottom: 15px;
+    width: 100px;
+}
+
+
+/*-----------------
+	25. Responsive
+-----------------------*/
+
+@media only screen and (max-width: 767.98px) {
+    body {
+        font-size: 0.9375rem;
+    }
+    h1,
+    .h1 {
+        font-size: 2rem;
+    }
+    h2,
+    .h2 {
+        font-size: 1.75rem;
+    }
+    h3,
+    .h3 {
+        font-size: 1.5rem;
+    }
+    h4,
+    .h4 {
+        font-size: 1.125rem;
+    }
+    h5,
+    .h5 {
+        font-size: 1rem;
+    }
+    h6,
+    .h6 {
+        font-size: 0.875rem;
+    }
+    .login-wrapper .loginbox .login-left {
+        display: none;
+    }
+    .login-wrapper .loginbox {
+        max-width: 450px;
+        min-height: unset;
+    }
+    .login-wrapper .loginbox .login-right {
+        float: none;
+        padding: 1.875rem;
+        width: 100%;
+    }
+}

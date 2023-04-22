@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+  <title>Student WorkSpace</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Khouribga SmartCity">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/styles/bootstrap-4.1.2/bootstrap.min.css}">
+  <link th:href="@{/Assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/plugins/OwlCarousel2-2.2.1/animate.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/styles/student.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/styles/student_responsive.css}">
+</head>
+
+<body>
+<div class="super_container">
+
+  <!-- Header -->
+  <header class="header trans_400" th:include="includes/dashboard-header :: header"></header>
+
+  <!-- Menu -->
+  <div class="menu_overlay trans_400"></div>
+  <div class="menu trans_400" th:include="includes/dashboard-menu :: div"></div>
+
+  <!-- Home -->
+
+  <div class="home">
+    <div class="home_background"></div>
+    <div class="background_image background_city" style="background-image:url('/Assets/images/city_3.png')"></div>
+    <div class="cloud cloud_1"><img th:src="@{/Assets/images/cloud.png}" alt=""></div>
+    <div class="cloud cloud_2"><img th:src="@{/Assets/images/cloud.png}" alt=""></div>
+    <div class="cloud cloud_3"><img th:src="@{/Assets/images/cloud_full_2.png}" alt=""></div>
+    <div class="cloud cloud_4"><img th:src="@{/Assets/images/cloud.png}" alt=""></div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content">
+              <div class="home_title">Student</div>
+              <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li><a href="/static">Home</a></li>
+                  <li>Student</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Domain Search -->
+  <div class="domain_search" th:include="includes/domain-search :: div"></div>
+
+  <!-- Student -->
+  <div class="elements">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <!-- Accordions & Tabs -->
+          <div class="accordions_and_tabs">
+            <div class="elements_title text-center">Choose from the tabs what u looking for</div>
+            <div class="row accordions_and_tabs_row">
+              <div class="col-lg-12">
+
+                <!-- Tabs -->
+                <div class="tabs magic_fade_in">
+                  <div class="tabs d-flex flex-row align-items-center justify-content-between flex-wrap">
+                    <div class="tab">Schools</div>
+                    <div class="tab active">Universities</div>
+                    <div class="tab">Institutions</div>
+                    <div class="tab">Libraries</div>
+                  </div>
+                  <div class="tab_panels">
+
+                    <!-- First - Schools -->
+                    <div class="tab_panel scrollable-div">
+                      <div class="tab_panel_content">
+                        <div th:each="school : ${schools}">
+                          <div class="row">
+                            <div class="col-lg-5">
+                              <div class="tab_image"><img th:src="@{${school.image}}" alt="" width="380" height="248"></div>
+                            </div>
+                            <div class="col-lg-7">
+                              <div class="tab_title" th:text="${school.name}"></div>
+                              <div class="tab_text">
+                                <p th:text="${school.description}"></p>
+                              </div>
+                              <div class="tab_links">
+                                <div class="link_item">
+                                  <a th:href="@{${school.url}}" target="_blank"><i class="fa fa-globe"></i> <span>Website</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${school.phone}}" target="_blank"><i class="fa fa-phone"></i> <span>Phone</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${school.mail}}" target="_blank"><i class="fa fa-envelope"></i> <span>Email</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${school.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Second - university -->
+
+                    <div class="tab_panel active scrollable-div">
+                      <div class="tab_panel_content">
+                        <div th:each="university : ${universities}">
+                          <div class="row">
+                            <div class="col-lg-5">
+                              <div class="tab_image"><img th:src="@{${university.image}}" alt="" width="380" height="248"></div>
+                            </div>
+                            <div class="col-lg-7">
+                              <div class="tab_title" th:text="${university.name}"></div>
+                              <div class="tab_text">
+                                <p th:text="${university.description}"></p>
+                              </div>
+                              <div class="tab_links">
+                                <div class="link_item">
+                                  <a th:href="@{${university.url}}" target="_blank"><i class="fa fa-globe"></i> <span>Website</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${university.phone}}" target="_blank"><i class="fa fa-phone"></i> <span>Phone</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${university.mail}}" target="_blank"><i class="fa fa-envelope"></i> <span>Email</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${university.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Third - institutions -->
+
+                    <div class="tab_panel scrollable-div">
+                      <div class="tab_panel_content">
+                        <div th:each="institute : ${institutions}">
+                          <div class="row">
+                            <div class="col-lg-5">
+                              <div class="tab_image"><img th:src="@{${institute.image}}" alt="" width="380" height="248"></div>
+                            </div>
+                            <div class="col-lg-7">
+                              <div class="tab_title" th:text="${institute.name}"></div>
+                              <div class="tab_text">
+                                <p th:text="${institute.description}"></p>
+                              </div>
+                              <div class="tab_links">
+                                <div class="link_item">
+                                  <a th:href="@{${institute.url}}" target="_blank"><i class="fa fa-globe"></i> <span>Website</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${institute.phone}}" target="_blank"><i class="fa fa-phone"></i> <span>Phone</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${institute.mail}}" target="_blank"><i class="fa fa-envelope"></i> <span>Email</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${institute.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Forth - libraries-->
+                    <div class="tab_panel scrollable-div">
+                      <div class="tab_panel_content">
+                        <div th:each="library : ${libraries}">
+                          <div class="row">
+                            <div class="col-lg-5">
+                              <div class="tab_image"><img th:src="@{${library.image}}" alt="" width="380" height="248"></div>
+                            </div>
+                            <div class="col-lg-7">
+                              <div class="tab_title" th:text="${library.name}"></div>
+                              <div class="tab_text">
+                                <p th:text="${library.description}"></p>
+                              </div>
+                              <div class="tab_links">
+                                <div class="link_item">
+                                  <a th:href="@{${library.url}}" target="_blank"><i class="fa fa-globe"></i> <span>Website</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${library.phone}}" target="_blank"><i class="fa fa-phone"></i> <span>Phone</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${library.mail}}" target="_blank"><i class="fa fa-envelope"></i> <span>Email</span></a>
+                                </div>
+                                <div class="link_item">
+                                  <a th:href="@{${library.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Milestones -->
+                <div class="milestones">
+                  <div class="elements_title text-center">Khouribga in numbers</div>
+                  <div class="row milestones_row">
+
+                    <!-- Milestone -->
+                    <div class="col-xl-3 col-md-6 milestone_col magic_fade_in">
+                      <div class="milestone d-flex flex-row align-items-center justify-content-start">
+                        <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/school.svg}" alt="shool-icon"></div>
+                        <div class="milestone_content">
+                          <div class="milestone_counter" data-end-value="30">0</div>
+                          <div class="milestone_text">Schools</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Milestone -->
+                    <div class="col-xl-3 col-md-6 milestone_col magic_fade_in">
+                      <div class="milestone d-flex flex-row align-items-center justify-content-start">
+                        <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/university.svg}" alt="university-icon"></div>
+                        <div class="milestone_content">
+                          <div class="milestone_counter" data-end-value="10">0</div>
+                          <div class="milestone_text">Universities</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Milestone -->
+                    <div class="col-xl-3 col-md-6 milestone_col magic_fade_in">
+                      <div class="milestone d-flex flex-row align-items-center justify-content-start">
+                        <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/library.svg}" alt="library-icon"></div>
+                        <div class="milestone_content">
+                          <div class="milestone_counter" data-end-value="5">0</div>
+                          <div class="milestone_text">Libraries</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <!-- Milestone -->
+                    <div class="col-xl-3 col-md-6 milestone_col magic_fade_in">
+                      <div class="milestone d-flex flex-row align-items-center justify-content-start">
+                        <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/institution.svg}" alt="institution-icon"></div>
+                        <div class="milestone_content">
+                          <div class="milestone_counter" data-end-value="15">0</div>
+                          <div class="milestone_text">Institutions</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer magic_fade_in" id="footer" th:include="includes/footer :: footer"></footer>
+</div>
+
+
+
+<!-- Scripts geos here -->
+<script th:src="@{/Assets/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/Assets/styles/bootstrap-4.1.2/popper.js}"></script>
+<script th:src="@{/Assets/styles/bootstrap-4.1.2/bootstrap.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/TweenMax.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/TimelineMax.min.js}"></script>
+<script th:src="@{/Assets/plugins/scrollmagic/ScrollMagic.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/animation.gsap.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/ScrollToPlugin.min.js}"></script>
+<script th:src="@{/Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+<script th:src="@{/Assets/plugins/easing/easing.js}"></script>
+<script th:src="@{/Assets/plugins/progressbar/progressbar.min.js}"></script>
+<script th:src="@{/Assets/plugins/parallax-js-master/parallax.min.js}"></script>
+<script th:src="@{/Assets/js/elements.js}"></script>
+</body>
+
+</html>

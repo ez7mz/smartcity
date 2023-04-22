@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+  <title>User Dashboard</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Khouribga SmartCity">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/styles/bootstrap-4.1.2/bootstrap.min.css}">
+  <link th:href="@{/Assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/plugins/OwlCarousel2-2.2.1/animate.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/styles/services.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/Assets/styles/services_responsive.css}">
+</head>
+
+<body>
+
+<div class="super_container">
+
+  <!-- Header -->
+  <header class="header trans_400" th:include="includes/dashboard-header :: header"></header>
+
+  <!-- Menu -->
+
+  <div class="menu_overlay trans_400"></div>
+  <div class="menu trans_400" th:include="includes/dashboard-menu :: div"></div>
+
+  <!-- Home -->
+
+  <div class="home">
+    <div class="home_background"></div>
+    <div class="background_image background_city" style="background-image:url('/Assets/images/city_3.png')"></div>
+    <div class="cloud cloud_1"><img th:src="@{/Assets/images/cloud.png}" alt=""></div>
+    <div class="cloud cloud_2"><img th:src="@{/Assets/images/cloud.png}" alt=""></div>
+    <div class="cloud cloud_3"><img th:src="@{/Assets/images/cloud_full_2.png}" alt=""></div>
+    <div class="cloud cloud_4"><img th:src="@{/Assets/images/cloud.png}" alt=""></div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content">
+              <div class="home_title">Dashboard</div>
+              <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li><a href="/static">Home</a></li>
+                  <li>Dashboard</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Domain Search -->
+  <div class="domain_search" th:include="includes/domain-search :: div"></div>
+
+  <!-- Services -->
+
+  <div class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="section_title text-center magic_fade_in">
+            <h2>Select based on who you are</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row services_row">
+
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 service_col magic_fade_in">
+          <div class="service d-flex flex-column align-items-center justify-content-start text-center trans_200">
+            <div class="service_icon"><img class="svg" th:src="@{/Assets/images/student.png}" alt="student-icon"></div>
+            <div class="service_title">
+              <h3>Student</h3>
+            </div>
+            <div class="service_text">
+              <p>Access to educational resources, learning tools, and student activities in the city.</p>
+            </div>
+            <div class="service_button trans_200"><a th:href="@{/dashboard/student}">Select</a></div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 service_col magic_fade_in">
+          <div class="service d-flex flex-column align-items-center justify-content-start text-center trans_200">
+            <div class="service_icon"><img class="svg" th:src="@{/Assets/images/tourist.png}" alt="tourist-icon"></div>
+            <div class="service_title">
+              <h3>Tourist</h3>
+            </div>
+            <div class="service_text">
+              <p>Information on local attractions, events, and real-time updates on transportation and safety.</p>
+            </div>
+            <div class="service_button trans_200"><a th:href="@{/coming-soon}">Select</a></div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 service_col magic_fade_in">
+          <div class="service d-flex flex-column align-items-center justify-content-start text-center trans_200">
+            <div class="service_icon"><img class="svg" th:src="@{/Assets/images/job-seeker.png}" alt="job-seeker-icon"></div>
+            <div class="service_title">
+              <h3>Jobs seeker</h3>
+            </div>
+            <div class="service_text">
+              <p>Information on job openings, career development, and networking opportunities in the city.</p>
+            </div>
+            <div class="service_button trans_200"><a th:href="@{/coming-soon}">Select</a></div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 service_col magic_fade_in">
+          <div class="service d-flex flex-column align-items-center justify-content-start text-center trans_200">
+            <div class="service_icon"><img class="svg" th:src="@{/Assets/images/businessman.png}" alt="businessman-icon"></div>
+            <div class="service_title">
+              <h3>Businessman</h3>
+            </div>
+            <div class="service_text">
+              <p>IInformation on local business opportunities, investment options, and networking opportunities for business development.</p>
+            </div>
+            <div class="service_button trans_200"><a th:href="@{/coming-soon}">Select</a></div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 service_col magic_fade_in">
+          <div class="service d-flex flex-column align-items-center justify-content-start text-center trans_200">
+            <div class="service_icon"><img class="svg" th:src="@{/Assets/images/patient.png}" alt="patient-icon"></div>
+            <div class="service_title">
+              <h3>Patient</h3>
+            </div>
+            <div class="service_text">
+              <p>Information on local healthcare providers, resources for managing chronic conditions, and transportation options for medical appointments.</p>
+            </div>
+            <div class="service_button trans_200"><a th:href="@{/coming-soon}">Select</a></div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 service_col magic_fade_in">
+          <div class="service d-flex flex-column align-items-center justify-content-start text-center trans_200">
+            <div class="service_icon"><img class="svg" th:src="@{/Assets/images/citizen.png}" alt="citizen-icon"></div>
+            <div class="service_title">
+              <h3>Citizen</h3>
+            </div>
+            <div class="service_text">
+              <p>Information on local government initiatives, opportunities for civic engagement, and sustainable living practices.</p>
+            </div>
+            <div class="service_button trans_200"><a th:href="@{/coming-soon}">Select</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Support -->
+
+  <div class="support">
+    <div class="background_image support_background"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="support_content magic_fade_in">
+            <div class="support_title"><span>24/7</span>Online Support</div>
+            <div class="support_text">
+              <p>Get the information you need, when you need it. Our smart city project's information services offer tailored resources for students, tourists, job seekers, patients, citizens, and businessmen. 24/7 access to everything
+                you need to make the most of your city. Check it out now!</p>
+            </div>
+            <div class="support_price">from <span>$0.00</span> /month</div>
+            <div class="button trans_200"><a href="#">Start now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer magic_fade_in" id="footer" th:include="includes/footer :: footer"></footer>
+
+</div>
+
+<script th:src="@{/Assets/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/Assets/styles/bootstrap-4.1.2/popper.js}"></script>
+<script th:src="@{/Assets/styles/bootstrap-4.1.2/bootstrap.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/TweenMax.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/TimelineMax.min.js}"></script>
+<script th:src="@{/Assets/plugins/scrollmagic/ScrollMagic.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/animation.gsap.min.js}"></script>
+<script th:src="@{/Assets/plugins/greensock/ScrollToPlugin.min.js}"></script>
+<script th:src="@{/Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+<script th:src="@{/Assets/plugins/easing/easing.js}"></script>
+<script th:src="@{/Assets/plugins/progressbar/progressbar.min.js}"></script>
+<script th:src="@{/Assets/plugins/parallax-js-master/parallax.min.js}"></script>
+<script th:src="@{/Assets/js/services.js}"></script>
+</body>
+</html>

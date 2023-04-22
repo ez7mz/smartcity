@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+  <title>About us</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Khouribga SmartCity">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" th:href="@{Assets/styles/bootstrap-4.1.2/bootstrap.min.css}">
+  <link th:href="@{Assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" th:href="@{Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{Assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{Assets/plugins/OwlCarousel2-2.2.1/animate.css}">
+  <link th:href="@{Assets/plugins/colorbox/colorbox.css}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" th:href="@{Assets/styles/about.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{Assets/styles/about_responsive.css}">
+</head>
+
+<body>
+
+<div class="super_container">
+
+  <!-- Header -->
+  <header class="header trans_400" th:include="includes/header :: header"></header>
+
+  <!-- Menu -->
+  <div class="menu_overlay trans_400"></div>
+  <div class="menu trans_400" th:include="includes/menu :: div"></div>
+
+  <!-- Home -->
+
+  <div class="home">
+    <div class="home_background"></div>
+    <div class="background_image background_city" style="background-image:url('/Assets/images/city_2.png')"></div>
+    <div class="cloud cloud_1"><img th:src="@{Assets/images/cloud.png}" alt=""></div>
+    <div class="cloud cloud_2"><img th:src="@{Assets/images/cloud.png}" alt=""></div>
+    <div class="cloud cloud_3"><img th:src="@{Assets/images/cloud_full_2.png}" alt=""></div>
+    <div class="cloud cloud_4"><img th:src="@{Assets/images/cloud.png}" alt=""></div>
+    <div class="home_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="home_content">
+              <div class="home_title">About us</div>
+              <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li><a th:href="@{/}">Home</a></li>
+                  <li>About us</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Domain Search -->
+  <div class="domain_search" th:include="includes/domain-search :: div"></div>
+
+  <!-- Why Choose Us -->
+
+  <div class="why">
+    <div class="container">
+      <div class="row">
+
+        <!-- Why Choose Us Content -->
+        <div class="col-lg-6 why_col magic_fade_in">
+          <div class="section_title">
+            <h2>Why Choose us?</h2>
+          </div>
+          <div class="why_text">
+            <p>Our SmartCity project is designed with one goal in mind: to make it easy and convenient for residents to find what they need in the city. We prioritize accessibility and user-friendliness, ensuring that everyone can easily
+              access and use our platform.</p>
+          </div>
+          <div class="why_list">
+            <ul>
+              <li class="d-flex flex-row align-items-center justify-content-start">
+                <div></div>Find local businesses and services, and discover new opportunities</li>
+              <li class="d-flex flex-row align-items-center justify-content-start">
+                <div></div>You'll always find exactly what you're looking for</li>
+              <li class="d-flex flex-row align-items-center justify-content-start">
+                <div></div>Convenience and simplicity of our SmartCity platform </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Why Choose Us Image -->
+        <div class="col-lg-6 why_col magic_fade_in">
+          <div class="why_image"><img th:src="@{Assets/images/why.png}" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video -->
+
+  <div class="video">
+    <div class="parallax_background parallax-window" data-parallax="scroll" th:data-image-src="@{Assets/images/video.png}" data-speed="0.8"></div>
+    <div class="video_content d-flex flex-column align-items-center justify-content-center text-center">
+      <div class="video_play_icon magic_fade_in">
+        <a class="vimeo video_button d-flex flex-column align-items-center justify-content-center" href="https://www.youtube.com/embed/hPr-Yc92qaY"><i class="fa fa-play trans_200" aria-hidden="true"></i></a>
+      </div>
+      <div class="video_title magic_fade_in">See how life is in our SmartCity</div>
+    </div>
+  </div>
+
+  <!-- Team -->
+
+  <div class="team">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center magic_fade_in">
+          <div class="section_title">
+            <h2>Meet the Team</h2>
+          </div>
+          <div class="section_text">
+            <p>If you can laugh together, you can work together - <b>Robert Orben</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="row team_row">
+
+        <!-- Team Member -->
+        <div class="col-xl-3 col-md-6 team_col magic_fade_in">
+          <div class="team_item">
+            <div class="team_image"><img th:src="@{Assets/images/hmesrar.png}" alt=""></div>
+            <div class="team_content">
+              <div class="team_name"><a href="#">MESRAR Hamza</a></div>
+              <div class="team_title">IT & Data Engineering Student</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member -->
+        <div class="col-xl-3 col-md-6 team_col magic_fade_in">
+          <div class="team_item">
+            <div class="team_image"><img th:src="@{Assets/images/team_4.jpg}" alt=""></div>
+            <div class="team_content">
+              <div class="team_name"><a href="#">NABOUZI Yasser</a></div>
+              <div class="team_title">Future IT & Data Engineer</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta" th:include="includes/cta :: div"></div>
+
+  <!-- Footer -->
+  <footer class="footer magic_fade_in" id="footer" th:include="includes/footer :: footer"></footer>
+</div>
+
+<script th:src="@{Assets/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{Assets/styles/bootstrap-4.1.2/popper.js}"></script>
+<script th:src="@{Assets/styles/bootstrap-4.1.2/bootstrap.min.js}"></script>
+<script th:src="@{Assets/plugins/greensock/TweenMax.min.js}"></script>
+<script th:src="@{Assets/plugins/greensock/TimelineMax.min.js}"></script>
+<script th:src="@{Assets/plugins/scrollmagic/ScrollMagic.min.js}"></script>
+<script th:src="@{Assets/plugins/greensock/animation.gsap.min.js}"></script>
+<script th:src="@{Assets/plugins/greensock/ScrollToPlugin.min.js}"></script>
+<script th:src="@{Assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+<script th:src="@{Assets/plugins/easing/easing.js}"></script>
+<script th:src="@{Assets/plugins/progressbar/progressbar.min.js}"></script>
+<script th:src="@{Assets/plugins/parallax-js-master/parallax.min.js}"></script>
+<script th:src="@{Assets/plugins/colorbox/jquery.colorbox-min.js}"></script>
+<script th:src="@{Assets/js/about.js}"></script>
+</body>
+
+</html>
