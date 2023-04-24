@@ -5,15 +5,15 @@ server:
 
 spring:
   datasource:
-    password: "yasser1234"
-    url: jdbc:mariadb://localhost:3306/smartcity_project?createDatabaseIfNotExist=true
-    username: abmola
+    password: "@Qwerty123"
+    url: jdbc:mysql://localhost:3306/smartcity_project?createDatabaseIfNotExist=true
+    username: ez7mz
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MariaDB10Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     show-sql: true
 
