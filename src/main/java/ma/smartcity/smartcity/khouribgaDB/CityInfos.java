@@ -11,17 +11,20 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@ToString
 @Entity
 public class CityInfos {
     @Id
     private Long id;
     private String name;
+    @Column(name="location",columnDefinition="LONGTEXT")
     private String location;
     private String url;
     private String mail;
     private String phone;
+    @Column(name="description",columnDefinition="LONGTEXT")
     private String description;
     private String category;
-    @Column(length = 10000)
+    @Column(name="image",columnDefinition="LONGTEXT")
     private String image;
 }
