@@ -20,6 +20,7 @@
                 <div class="profile-img" type="button" id="drop-down" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down float_right" style="color: #fff"></i></div>
                 <div class="dropdown-menu" aria-labelledby="drop-down">
                   <a class="dropdown-item" ><i class="fa fa-email"></i> [[${appUser.email}]]</a>
+                  <a th:if="${appUser.isAdmin}" class="dropdown-item" href="/admin"><i class="fa fa-server"></i> Admin Panel</a>
                   <a class="dropdown-item" href="/coming-soon"><i class="fa fa-gears"></i> Settings</a>
                   <a class="dropdown-item" href="/lock-screen"><i class="fa fa-lock"></i> Lock Screen</a>
                   <a class="dropdown-item" href="/logout"><i class="fa fa-power-off"></i> Logout</a>

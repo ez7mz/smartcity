@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Smart City | Admin Panel</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/Assets/admin/img/logo-small.png}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/Assets/admin/css/bootstrap.min.css}">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" th:href="@{/Assets/admin/css/font-awesome.min.css}">
+
+    <link rel="stylesheet" th:href="@{/Assets/admin/plugins/morris/morris.css}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" th:href="@{/Assets/admin/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- Main Wrapper -->
+<div class="main-wrapper">
+
+    <!-- Header -->
+    <div class="header">
+
+        <!-- Logo -->
+        <div class="header-left">
+            <a href="/admin" class="logo">
+                <img th:src="@{/Assets/admin/img/logo.png}" alt="Logo">
+            </a>
+            <a href="/admin" class="logo logo-small">
+                <img th:src="@{/Assets/admin/img/logo-small.png}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+        <!-- /Logo -->
+
+        <a href="javascript:void(0);" id="toggle_btn">
+            <i class="fa fa-align-right"></i>
+        </a>
+
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Search here">
+                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fa fa-bars"></i>
+        </a>
+        <!-- /Mobile Menu Toggle -->
+
+        <!-- Header Right Menu -->
+        <ul class="nav user-menu">
+            <!-- User Menu -->
+            <li class="nav-item dropdown has-arrow">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <span class="user-img"><img class="rounded-circle" th:src="@{/Assets/images/avatar.png}" width="31" alt="user-profile"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img th:src="@{/Assets/images/avatar.png}" alt="user-profile" class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6>[[${appUser.firstName}]] [[${appUser.lastName}]]</h6>
+                            <p class="text-muted mb-0">Administrator</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item">[[${appUser.email}]]</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </li>
+            <!-- /User Menu -->
+
+        </ul>
+        <!-- /Header Right Menu -->
+
+    </div>
+    <!-- /Header -->
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="/admin"><i class="fa fa-user"></i> <span>Admin Panel</span></a>
+                    </li>
+                    <li>
+                        <a href="/"><i class="fa fa-home"></i> <span>Home</span></a>
+                    </li>
+                    <li>
+                        <a href="/dashboard"><i class="fa fa-table"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="/logout"><i class="fa fa-power-off"></i> <span>Logout</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Sidebar -->
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <div class="content container-fluid">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="page-title">Hey [[${appUser.firstName}]] [[${appUser.lastName}]], Welcome boss!</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Header -->
+
+            <div class="row">
+
+                <div class="col-xl-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-primary border-primary">
+											<i class="fa fa-graduation-cap"></i>
+										</span>
+                                <div class="dash-count">
+                                    <h3 class="add-btn" data-toggle="modal" data-target="#studentModal"><i class="fa fa-plus"></i></h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6 class="text-muted">Student Workspace</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-primary w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-success">
+											<i class="fa fa-plane"></i>
+										</span>
+                                <div class="dash-count">
+                                    <h3 class="add-btn"><i class="fa fa-plus"></i></h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+
+                                <h6 class="text-muted">Tourist Workspace</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-success w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-danger border-danger">
+											<i class="fa fa-search"></i>
+										</span>
+                                <div class="dash-count">
+                                    <h3 class="add-btn"><i class="fa fa-plus"></i></h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+
+                                <h6 class="text-muted">Job Seeker Workspace</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-danger w-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-warning border-warning">
+											<i class="fa fa-briefcase"></i>
+										</span>
+                                <div class="dash-count">
+                                    <h3 class="add-btn"><i class="fa fa-plus"></i></h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+
+                                <h6 class="text-muted">Businessman Workspace</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-warning w-100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-primary border-primary">
+											<i class="fa fa-stethoscope"></i>
+										</span>
+                                <div class="dash-count">
+                                    <h3 class="add-btn"><i class="fa fa-plus"></i></h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+                                <h6 class="text-muted">Patient Workspace</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-primary w-100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-success">
+											<i class="fa fa-building"></i>
+										</span>
+                                <div class="dash-count">
+                                    <h3 class="add-btn"><i class="fa fa-plus"></i></h3>
+                                </div>
+                            </div>
+                            <div class="dash-widget-info">
+
+                                <h6 class="text-muted">Citizen Workspace</h6>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-success w-100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal for each section -->
+                <!-- Student Modal -->
+                <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add new item from here</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Form start from here -->
+                                <small style="color: red"> <b>* please if you don't have certain information from the listed bellow don't type anything in the input corresponding.</b></small>
+                                <form action="/itemSaved" method="post">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-md-2">Name</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="Item name" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">Website URL</label>
+                                        <div class="col-lg-10">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">https://</span>
+                                                </div>
+                                                <input type="text" class="form-control" name="url">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">Location URL</label>
+                                        <div class="col-lg-10">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">https://</span>
+                                                </div>
+                                                <input type="text" class="form-control" name="location">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">Image URL</label>
+                                        <div class="col-lg-10">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">https://</span>
+                                                </div>
+                                                <input type="text" class="form-control" name="image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-md-2">Phone</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="Contact phone" name="phone">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">Email</label>
+                                        <div class="col-lg-10">
+                                            <div class="input-group input-group-lg">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="sizing-addon1">@</span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1" name="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-md-2">Category</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="category">
+                                                <option>-- Select --</option>
+                                                <option value="School">School</option>
+                                                <option value="Library">Library</option>
+                                                <option value="University">University</option>
+                                                <option value="Institution">Institution</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-md-2">Description</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="description" id="inputToEra">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <input type="submit" class="btn btn-primary" value="Save changes">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Wrapper -->
+
+</div>
+<!-- /Main Wrapper -->
+
+<!-- jQuery -->
+<script th:src="@{/Assets/admin/js/jquery-3.2.1.min.js}"></script>
+
+<!-- Bootstrap Core JS -->
+<script th:src="@{/Assets/admin/js/popper.min.js}"></script>
+<script th:src="@{/Assets/admin/js/bootstrap.min.js}"></script>
+
+<!-- Slimscroll JS -->
+<script th:src="@{/Assets/admin/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<script th:src="@{/Assets/admin/plugins/raphael/raphael.min.js}"></script>
+<script th:src="@{/Assets/admin/plugins/morris/morris.min.js}"></script>
+<script th:src="@{/Assets/admin/js/chart.morris.js}"></script>
+
+<!-- Custom JS -->
+<script th:src="@{/Assets/admin/js/script.js}"></script>
+<script>
+    const input = document.getElementById('inputToEra');
+
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const currentValue = input.value;
+            input.value = currentValue + '\n';
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+
+</html>

@@ -27,4 +27,15 @@ public class CityInfos {
     private String category;
     @Column(name="image",columnDefinition="LONGTEXT")
     private String image;
+
+    public CityInfos(String name, String location, String url, String mail, String phone, String description, String category, String image) {
+        this.name = name;
+        this.location = location;
+        this.url = url;
+        this.mail = mail;
+        this.phone = phone;
+        this.description = description;
+        this.category = category;
+        this.image = image;
+    }
 }

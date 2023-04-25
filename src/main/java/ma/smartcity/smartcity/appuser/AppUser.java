@@ -80,4 +80,8 @@ public class AppUser implements UserDetails {
     public boolean isEnabled() {
         return enabled;
     }
+
+    public boolean isAdmin(){
+        return this.appUserRole == AppUserRole.ADMIN;
+    }
 }

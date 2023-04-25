@@ -69,4 +69,7 @@ public class AppUserService implements UserDetailsService {
     public void deleteUser(Long id) {
         appUserRepository.deleteById(id);
     }
+    public void saveUser(AppUser appUser){
+        appUserRepository.save(appUser);
+    }
 }
