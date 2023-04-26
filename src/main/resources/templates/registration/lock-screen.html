@@ -38,10 +38,12 @@
             </div>
 
             <!-- Form -->
-            <form action="/dashboard">
+            <form action="/logback">
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="Password">
+                <input class="form-control" type="password" placeholder="Password" name="password">
               </div>
+              <div th:if="${param.error}" class="alert alert-danger">
+                Password is incorrect.</div>
               <div class="form-group mb-0">
                 <button class="btn btn-primary btn-block" type="submit">Enter</button>
               </div>
