@@ -45,4 +45,8 @@ public class CityInfosService {
         cityInfosRepository.save(item);
     }
 
+    public Long countByCategory(String category){
+        return cityInfosRepository.countCityInfosByCategory(category);
+    }
+
 }

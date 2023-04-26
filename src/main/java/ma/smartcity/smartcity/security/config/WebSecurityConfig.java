@@ -36,7 +36,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/v*/**", "/Assets/**", "/", "/about",  "/forgot-password", "/coming-soon")
                 .permitAll()
                 .anyRequest().authenticated().and().formLogin()
-                .loginPage("/login").permitAll()
+                .loginPage("/login").defaultSuccessUrl("/dashboard", true)
+                .permitAll()
                 .and().logout().logoutUrl("/logout")
                 .logoutSuccessUrl("/login?logout").permitAll();
     }

@@ -36,11 +36,26 @@ public class DashboardController {
         List<CityInfos> universities = cityInfosService.getCityInfoByCategory("University");
         List<CityInfos> institutions = cityInfosService.getCityInfoByCategory("Institution");
 
-        // add it to the ModelView
+        // get Count for <Milestones> Khouribga in numbers
+        Long schools_count = cityInfosService.countByCategory("School");
+        Long libraries_count = cityInfosService.countByCategory("Library");
+        Long universities_count = cityInfosService.countByCategory("University");
+        Long institutions_count = cityInfosService.countByCategory("Institution");
+
+
+        // add infos to the ModelView
         modelAndView.addObject("schools", schools);
         modelAndView.addObject("libraries", libraries);
         modelAndView.addObject("universities", universities);
         modelAndView.addObject("institutions", institutions);
+
+        // add counts to the ModelView
+        modelAndView.addObject("schools_count", schools_count);
+        modelAndView.addObject("libraries_count", libraries_count);
+        modelAndView.addObject("universities_count", universities_count);
+        modelAndView.addObject("institutions_count", institutions_count);
+
+
         // set ViewName to identify wish page to render
         modelAndView.setViewName("home/dashboard/student");
         return modelAndView;

@@ -230,7 +230,7 @@
                       <div class="milestone d-flex flex-row align-items-center justify-content-start">
                         <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/school.svg}" alt="shool-icon"></div>
                         <div class="milestone_content">
-                          <div class="milestone_counter" data-end-value="30">0</div>
+                          <div class="milestone_counter" th:data-end-value="${schools_count}">0</div>
                           <div class="milestone_text">Schools</div>
                         </div>
                       </div>
@@ -241,7 +241,7 @@
                       <div class="milestone d-flex flex-row align-items-center justify-content-start">
                         <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/university.svg}" alt="university-icon"></div>
                         <div class="milestone_content">
-                          <div class="milestone_counter" data-end-value="10">0</div>
+                          <div class="milestone_counter" th:data-end-value="${universities_count}">0</div>
                           <div class="milestone_text">Universities</div>
                         </div>
                       </div>
@@ -252,7 +252,7 @@
                       <div class="milestone d-flex flex-row align-items-center justify-content-start">
                         <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/library.svg}" alt="library-icon"></div>
                         <div class="milestone_content">
-                          <div class="milestone_counter" data-end-value="5">0</div>
+                          <div class="milestone_counter" th:data-end-value="${libraries_count}">0</div>
                           <div class="milestone_text">Libraries</div>
                         </div>
 
@@ -264,7 +264,7 @@
                       <div class="milestone d-flex flex-row align-items-center justify-content-start">
                         <div class="milestone_icon d-flex flex-column align-items-center justify-content-center"><img th:src="@{/Assets/images/institution.svg}" alt="institution-icon"></div>
                         <div class="milestone_content">
-                          <div class="milestone_counter" data-end-value="15">0</div>
+                          <div class="milestone_counter" th:data-end-value="${institutions_count}">0</div>
                           <div class="milestone_text">Institutions</div>
                         </div>
                       </div>

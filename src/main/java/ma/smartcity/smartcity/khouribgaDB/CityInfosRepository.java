@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface CityInfosRepository extends JpaRepository<CityInfos, Long> {
     public List<CityInfos> findCityInfosByCategory(String category);
+
+    public Long countCityInfosByCategory(String category);
 }
