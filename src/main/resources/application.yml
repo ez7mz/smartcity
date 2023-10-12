@@ -5,9 +5,9 @@ server:
 
 spring:
   datasource:
-    password: "ez7mz"
-    url: jdbc:mysql://localhost:3306/smartcity_project?createDatabaseIfNotExist=true
-    username: root
+    password: ${DATABASE_PASSWORD}
+    url: ${DATABASE_URI}
+    username: ${DATABASE_USER}
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,7 +18,7 @@ spring:
     show-sql: true
 
   mail:
-    host: localhost
+    host: maildev
     port: 1025
     username: hello
     password: hello
