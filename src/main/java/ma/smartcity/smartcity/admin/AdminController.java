@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import ma.smartcity.smartcity.appuser.AppUser;
 import ma.smartcity.smartcity.appuser.AppUserService;
 import ma.smartcity.smartcity.khouribgaDB.CityInfos;
+import ma.smartcity.smartcity.khouribgaDB.CityInfosService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +17,7 @@ public class AdminController {
 
     private final AppUserService appUserService;
     private final AdminService adminService;
+    private final CityInfosService cityInfosService;
 
     @RequestMapping("/admin")
     public ModelAndView admin(Principal principal){
@@ -45,5 +47,11 @@ public class AdminController {
     public String deleteUser(@PathVariable("id") Long id) {
         appUserService.deleteAppUserById(id);
         return "redirect:/admin";
+    }
+
+    @GetMapping("/{id}")
+    public String deleteCityInfosById(@PathVariable("id") Long id){
+        cityInfosService.deleteCityInfoById(id);
+        return "redirect:/dashboard/student";
     }
 }

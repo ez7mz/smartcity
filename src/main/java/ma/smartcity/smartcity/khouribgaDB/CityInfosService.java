@@ -49,4 +49,8 @@ public class CityInfosService {
         return cityInfosRepository.countCityInfosByCategory(category);
     }
 
+    public void deleteCityInfoById(Long id){
+        cityInfosRepository.deleteById(id);
+    }
+
 }

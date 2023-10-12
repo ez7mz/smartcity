@@ -106,6 +106,9 @@
                                 <div class="link_item">
                                   <a th:href="@{${school.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
                                 </div>
+                                <div th:if="${appUser.isAdmin}" class="link_item">
+                                  <a th:href="@{/{id}(id=${school.id})}"><i class="fa fa-trash-o"></i> <span>Delete</span></a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -140,6 +143,9 @@
                                 </div>
                                 <div class="link_item">
                                   <a th:href="@{${university.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
+                                </div>
+                                <div th:if="${appUser.isAdmin}" class="link_item">
+                                  <a th:href="@{/{id}(id=${university.id})}" target="_blank"><i class="fa fa-trash-o"></i> <span>Delete</span></a>
                                 </div>
                               </div>
                             </div>
@@ -176,6 +182,9 @@
                                 <div class="link_item">
                                   <a th:href="@{${institute.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
                                 </div>
+                                <div th:if="${appUser.isAdmin}" class="link_item">
+                                  <a th:href="@{/{id}(id=${institute.id})}" target="_blank"><i class="fa fa-trash-o"></i> <span>Delete</span></a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -209,6 +218,9 @@
                                 </div>
                                 <div class="link_item">
                                   <a th:href="@{${library.location}}" target="_blank"><i class="fa fa-location-arrow"></i> <span>Location</span></a>
+                                </div>
+                                <div th:if="${appUser.isAdmin}" class="link_item">
+                                  <a th:href="@{/{id}(id=${library.id})}" target="_blank"><i class="fa fa-trash-o"></i> <span>Delete</span></a>
                                 </div>
                               </div>
                             </div>
