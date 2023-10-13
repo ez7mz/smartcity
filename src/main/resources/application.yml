@@ -18,8 +18,8 @@ spring:
     show-sql: true
 
   mail:
-    host: maildev
-    port: 1025
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
     username: hello
     password: hello
 

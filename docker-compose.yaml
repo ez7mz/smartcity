@@ -10,8 +10,12 @@ services:
       DATABASE_URI: jdbc:mysql://mysqldb:3306/smartcity_project?createDatabaseIfNotExist=true
       DATABASE_USER: root
       DATABASE_PASSWORD: ez7mz
+      MAIL_HOST: maildev
+      MAIL_PORT: 1025
     depends_on:
       - mysqldb
+    networks:
+      - smartcity-network
 
   mysqldb:
     platform: linux/x86_64
@@ -22,6 +26,10 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: ez7mz
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - smartcity-network
 
   maildev:
     image: maildev/maildev
@@ -29,3 +37,9 @@ services:
     ports:
       - 1080:1080
       - 1025:1025
+    networks:
+      - smartcity-network
+networks:
+  smartcity-network:
+volumes:
+  mysql:

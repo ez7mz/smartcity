@@ -22,9 +22,12 @@ public class CityInfosService {
     @PostConstruct
     public List<CityInfos> init() {
         System.out.println("Filling the Database with the goodies ...");
-//        AppUser admin = new AppUser("Admin", "User", "root@root.com", bCryptPasswordEncoder.encode("root"), AppUserRole.ADMIN);
-//        appUserService.saveUser(admin);
-//        System.out.println(CityInfosReader.readCsv("src/main/resources/static/Assets/database/khouribgaDB.csv"));
+        if (appUserService.findUserByEmail("root@root.com") == null){
+            AppUser admin = new AppUser("Abmola", "Smayka", "root@root.com", bCryptPasswordEncoder.encode("root"), AppUserRole.ADMIN);
+            admin.enableUser();
+            appUserService.saveUser(admin);
+        }
+//      System.out.println(CityInfosReader.readCsv("src/main/resources/static/Assets/database/khouribgaDB.csv"));
         return cityInfosRepository.saveAll(CityInfosReader.readCsv("src/main/resources/static/Assets/database/khouribgaDB.csv"));
     }
 

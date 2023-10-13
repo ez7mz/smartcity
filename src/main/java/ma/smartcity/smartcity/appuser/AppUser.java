@@ -81,6 +81,10 @@ public class AppUser implements UserDetails {
         return enabled;
     }
 
+    public void enableUser(){
+        this.enabled = !this.enabled;
+    }
+
     public boolean isAdmin(){
         return this.appUserRole == AppUserRole.ADMIN;
     }
